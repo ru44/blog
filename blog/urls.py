@@ -1,4 +1,3 @@
-from xml.dom.minidom import Document
 from django.contrib import admin
 from django.urls import path, include
 from . import views
@@ -9,7 +8,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('about/', views.about),
     path('', views.home),
-    path('art/', include('articles.urls')),
+    path('accounts/', include('accounts.urls')),
+    path('art/', include('articles.urls'))
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
